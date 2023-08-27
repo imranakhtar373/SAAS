@@ -1,0 +1,44 @@
+@import './resets';
+@import './variables';
+
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name );
+}
+
+@mixin Flexcenter{
+    display:flex;
+    justify-content: center;
+}
+
+
+$primary-color :blue;
+$accent-color:purple;
+$basic-color:maroon;
+$font-weight:(
+    "simple" : 500,
+    "bold" : 700,
+    "bolder" : 900
+);
+
+
+body{
+    background-color: $accent-color;
+    
+}
+
+.main{
+    @include Flexcenter;
+    width: 80%;
+    margin: 0 auto;
+
+ #{&}_paragraph{
+    font-weight: weight(bolder);
+
+    &:hover{
+        color: palevioletred;
+    }
+
+}
+
+}
